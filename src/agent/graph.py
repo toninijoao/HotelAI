@@ -1,24 +1,12 @@
+from langchain_groq import ChatGroq
 from langgraph.graph import END, START, StateGraph
 
 from src.agent.nodes import generate_node, retrieve_node
 from src.agent.state import HotelState
-from src.config import (
-    ANTHROPIC_API_KEY,
-    ANTHROPIC_MODEL,
-    GROQ_API_KEY,
-    GROQ_MODEL,
-    LLM_PROVIDER,
-)
+from src.config import GROQ_API_KEY, GROQ_MODEL
 
 
 def _build_llm():
-    if LLM_PROVIDER == "anthropic":
-        from langchain_anthropic import ChatAnthropic
-
-        return ChatAnthropic(model=ANTHROPIC_MODEL, api_key=ANTHROPIC_API_KEY)
-
-    from langchain_groq import ChatGroq
-
     return ChatGroq(model=GROQ_MODEL, api_key=GROQ_API_KEY)
 
 
