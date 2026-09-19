@@ -18,4 +18,4 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
 
 RETRIEVER_K = int(os.getenv("RETRIEVER_K", "4"))
 
-HOTEL_NAME = os.getenv("HOTEL_NAME", "Hotel AI")
+HOTEL = os.getenv("HOTEL", "Hotel AI")

@@ -4,7 +4,7 @@ sys.path.append(str(Path(__file__).resolve().parent))
 import streamlit as st
 from langchain_core.messages import HumanMessage
 from src.agent.graph import build_graph
-from src.config import EMBEDDING_MODEL, GROQ_MODEL, HOTEL_NAME
+from src.config import EMBEDDING_MODEL, GROQ_MODEL, HOTEL
 
 st.set_page_config(page_title=HOTEL, page_icon="🏨")
 
@@ -13,7 +13,7 @@ def get_graph():
     return build_graph()
 
 def main():
-    st.title(f"🏨 {HOTEL_NAME}")
+    st.title(f"🏨 {HOTEL}")
     st.caption("Assistente virtual do hotel")
 
     dev_mode = st.sidebar.toggle("Modo desenvolvedor", value=False)
