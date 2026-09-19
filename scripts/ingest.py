@@ -3,8 +3,8 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.config import PDF_PATH, VECTORSTORE_DIR
-from src.rag.loader import load_pdf
+from src.config import DOCUMENT_PATH, VECTORSTORE_DIR
+from src.rag.loader import load_document
 from src.rag.splitter import split_documents
 from src.rag.vectorstore import create_vectorstore
 

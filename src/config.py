@@ -5,7 +5,7 @@ load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-PDF_PATH = os.path.join(BASE_DIR, "data", "hotel.pdf")
+DOCUMENT_PATH = os.path.join(BASE_DIR, "data", "hotel.md")
 VECTORSTORE_DIR = os.path.join(BASE_DIR, "vectorstore")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

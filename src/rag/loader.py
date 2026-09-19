@@ -1,7 +1,6 @@
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import TextLoader
 
 
-def load_pdf(pdf_path: str):
-    """Carrega um PDF e retorna a lista de documentos (um por página)."""
-    loader = PyPDFLoader(pdf_path)
+def load_document(document_path: str):
+    loader = TextLoader(document_path, encoding="utf-8")
     return loader.load()
