@@ -1,16 +1,21 @@
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent))
+
 import streamlit as st
 from langchain_core.messages import HumanMessage
+
 from src.agent.graph import build_graph
 from src.config import EMBEDDING_MODEL, GROQ_MODEL, HOTEL
 
 st.set_page_config(page_title=HOTEL, page_icon="🏨")
 
+
 @st.cache_resource
 def get_graph():
     return build_graph()
+
 
 def main():
     st.title(f"🏨 {HOTEL}")
@@ -35,12 +40,12 @@ def main():
 
         try:
             graph = get_graph()
+            result = graph.invoke({"messages": st.session_state.history})
         except FileNotFoundError as e:
             with st.chat_message("assistant"):
                 st.error(str(e))
             return
 
-        result = graph.invoke({"messages": st.session_state.history})
         answer = result["messages"][-1]
         st.session_state.history.append(answer)
 

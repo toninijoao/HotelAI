@@ -10,9 +10,9 @@ from src.rag.vectorstore import create_vectorstore
 
 
 def main():
-    print(f"Carregando PDF de: {PDF_PATH}")
-    documents = load_pdf(PDF_PATH)
-    print(f"{len(documents)} página(s) carregada(s).")
+    print(f"Carregando documento de: {DOCUMENT_PATH}")
+    documents = load_document(DOCUMENT_PATH)
+    print(f"{len(documents)} documento(s) carregado(s).")
 
     print("Dividindo documentos em chunks...")
     chunks = split_documents(documents)
