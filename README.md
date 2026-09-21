@@ -1,7 +1,7 @@
 Assistente de atendimento hoteleiro via RAG. Responde perguntas dos hóspedes com base em uma fonte de conhecimento local, 
 sem alucinar informações fora do contexto recuperado.
 
-*Stack:*
+🛠️ *Stack:*
 
 Streamlit - interface de chat
 
